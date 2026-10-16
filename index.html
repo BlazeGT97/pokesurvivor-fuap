@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="css/style.css">
 <style>/* fuente (también aquí: el CSS puede estar en caché) */
 @font-face { font-family: 'Pixelify'; src: url('assets/fonts/Fredoka.ttf') format('truetype'); font-weight: 300 900; font-display: block; }</style>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "bb790692d1814e0cb6fdeed3e09efedd"}'></script>
 </head>
 <body>
 
@@ -220,20 +221,8 @@
       antes posible: <a id="legal-mail" href="#"></a></p>
     <p>Código fuente: <a id="legal-repo" href="#" target="_blank" rel="noopener"></a></p>
     <h3>Privacidad</h3>
-    <p>Si creas una cuenta, guardamos tu nombre de jugador y tu partida (colección, monedas,
-      mejoras y estadísticas) en Google Firebase para que puedas seguir en cualquier ordenador.
-      Si entras con Google, Firebase guarda también tu correo de Google para identificarte
-      (nunca se enseña a otros jugadores).
-      No usamos tus datos para nada más, ni los compartimos, ni hay publicidad ni seguimiento.
-      Como invitado no se guarda nada fuera de tu navegador.</p>
-    <p>Amigos y ranking: tu <b>apodo</b> es público para otros jugadores. Guardamos tu lista de
-      amigos, si estás en línea y tus mejores tiempos (con tu apodo y tu Pokémon).</p>
-    <p>Partidas en grupo: tu navegador se conecta <b>directamente</b> con el de tus compañeros
-      (como en una videollamada), así que cada uno puede llegar a ver la dirección IP del otro.
-      Juega en grupo sólo con gente que conozcas. Si la conexión directa no es posible, la partida
-      pasa por los servidores de Firebase.</p>
-    <p>Puedes borrar tu cuenta cuando quieras (se borran también tu apodo, tus amigos y tus marcas):</p>
-    <div class="row">
+    <p>Esta versión no tiene servidor: tu partida se guarda sólo en tu navegador y no se envía a ningún sitio. Para contar las visitas usamos Cloudflare Web Analytics, que es anónimo y no usa cookies. No hay publicidad.</p>
+    <div class="row" style="display:none">
       <button class="btn small" id="legal-delete">Borrar mi cuenta y mi partida</button>
       <span id="legal-del-msg" class="note" style="margin:0"></span>
     </div>
@@ -513,6 +502,6 @@
 </section>
 
 <!-- datos generados -->
-<script defer src="js/app.min.js?v=a6014201a2"></script>
+<script defer src="js/app.min.js?v=e85d1a1514"></script>
 </body>
 </html>
