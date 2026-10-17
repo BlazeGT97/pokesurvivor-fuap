@@ -20,6 +20,38 @@
 <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
 <link rel="preload" href="assets/fonts/Fredoka.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="stylesheet" href="css/style.css">
+<style>/* perso: cuadro central del menú (tu Pokémon + niveles); aquí porque style.css se queda en caché */
+.play-panel { display: flex; gap: 18px; align-items: stretch; margin: 10px auto 0; padding: 14px 16px; max-width: 640px;
+  background: linear-gradient(180deg, rgba(18,26,44,.92), rgba(8,12,24,.95)); border: 2px solid #a8894a; border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.45), inset 0 0 0 3px rgba(255,220,150,.08); }
+.play-panel .partner-card { margin-top: 0; flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; }
+.play-panel #menu-partner { cursor: pointer; transition: transform .12s; }
+.play-panel #menu-partner:hover { transform: scale(1.03); }
+.play-panel .pp-upg { display: inline-flex; align-items: center; gap: 6px; margin-top: 6px; background: none; border: 1px solid rgba(255,210,63,.5); color: #ffd23f; border-radius: 8px; padding: 3px 12px; font: inherit; font-size: 13px; font-weight: 800; cursor: pointer; }
+.play-panel .pp-upg:hover { background: rgba(255,210,63,.12); }
+.play-panel .pp-levels { flex: 1; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.play-panel .pp-play { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 24px; font-weight: 800; padding: 10px 14px; border-radius: 12px; }
+.play-panel .pp-play small { font-size: 12px; font-weight: 600; opacity: .8; margin-left: 4px; }
+.play-panel .pp-play .mi-ico { display: inline-flex; }
+.play-panel .pp-title { font-size: 13px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #8fa3c4; text-align: left; }
+#menu-maps { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.lvl-card { display: flex; align-items: center; gap: 10px; text-align: left; padding: 10px 12px; border-radius: 10px; border: 2px solid #3a4f8a;
+  background: rgba(0,0,0,.28); color: #fff; font: inherit; cursor: pointer; flex: 1; }
+.lvl-card:hover:not([disabled]) { border-color: #6f86c8; }
+.lvl-card.on { border-color: #ffd23f; background: rgba(255,210,63,.1); box-shadow: 0 0 12px rgba(255,210,63,.25); }
+.lvl-card[disabled] { opacity: .45; cursor: default; }
+.lvl-card .ln { font-size: 22px; font-weight: 800; color: #ffd23f; min-width: 30px; text-align: center; }
+.lvl-card b { display: block; font-size: 15px; }
+.lvl-card small { display: block; font-size: 11px; color: #9fb1c9; }
+.lvl-card .lt { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 4px; }
+.lvl-card .lt img { width: 18px; height: 18px; }
+.lvl-card .lk { margin-left: auto; font-size: 12px; font-weight: 800; color: #ff9a8a; white-space: nowrap; }
+@media (max-width: 760px), (max-height: 520px) {
+  .play-panel { flex-direction: column; padding: 10px; gap: 10px; max-width: 420px; }
+  #menu-maps { flex-direction: row; } .lvl-card { flex-direction: column; text-align: center; gap: 2px; padding: 6px; }
+  .lvl-card .lk { margin: 0; } .lvl-card small { display: none; } .lvl-card .lt { justify-content: center; } .lvl-card .lt img { width: 14px; height: 14px; }
+}
+</style>
 <style>/* fuente (también aquí: el CSS puede estar en caché) */
 @font-face { font-family: 'Pixelify'; src: url('assets/fonts/Fredoka.ttf') format('truetype'); font-weight: 300 900; font-display: block; }</style>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "bb790692d1814e0cb6fdeed3e09efedd"}'></script>
@@ -113,19 +145,26 @@
       <div class="t1">PokéSurvivor</div>
       <div class="t2">Mundo Misterioso</div>
     </div>
-    <div class="partner-card">
-      <canvas id="menu-partner" class="stage" width="260" height="200"></canvas>
-      <div class="nm" id="menu-partner-name"></div>
-      <div class="lv" id="menu-partner-info"></div>
-      <div class="seg hidden" id="menu-shiny"><button data-v="0">Normal</button><button data-v="1"></button></div>
+    <!-- perso: cuadro central: tu Pokémon (clic: sus mejoras) y la elección del nivel -->
+    <div class="play-panel">
+      <div class="partner-card">
+        <canvas id="menu-partner" class="stage" width="260" height="200" title="Mejoras"></canvas>
+        <div class="nm" id="menu-partner-name"></div>
+        <div class="lv" id="menu-partner-info"></div>
+        <div class="seg hidden" id="menu-shiny"><button data-v="0">Normal</button><button data-v="1"></button></div>
+        <button class="pp-upg" id="menu-partner-upg"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M7 1 L13 8 H9 V13 H5 V8 H1 Z" fill="#ffd23f" stroke="#7a5a00" stroke-width="1"/></svg> Mejoras</button>
+      </div>
+      <div class="pp-levels">
+        <div class="pp-title">Elige el nivel</div>
+        <div id="menu-maps"></div>
+        <button class="btn gold pp-play" data-go="play">Jugar<small>Entra en la mazmorra</small></button>
+      </div>
     </div>
   </div>
   <div class="menu-right">
     <div class="box">
       <div class="menu-list">
-        <button class="menu-item play" data-go="play">Jugar<small>Entra en la mazmorra</small></button>
         <button class="menu-item" data-go="dex">Pokémon<small id="menu-dex-count">Tu colección</small></button>
-        <button class="menu-item" data-go="upgrades">Mejoras<small>Haz más fuerte cada run</small></button>
         <button class="menu-item" data-go="gacha">Gacha<small>9 regiones · Pokémon y shinies</small></button>
         <button class="menu-item" data-go="goals">Misiones<small id="menu-goals-sub">Misiones, logros y perfil</small></button>
         <button class="menu-item" data-go="friends">Amigos<small id="menu-friends-sub">Juega en grupo, hasta 4</small></button>
@@ -506,6 +545,6 @@
 </section>
 
 <!-- datos generados -->
-<script defer src="js/app.min.js?v=16a1fb834d"></script>
+<script defer src="js/app.min.js?v=5978769fae"></script>
 </body>
 </html>
