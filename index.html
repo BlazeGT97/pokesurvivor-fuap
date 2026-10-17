@@ -237,7 +237,8 @@
       <div class="menu-list">
         <button class="menu-item" data-go="dex">Pokémon<small id="menu-dex-count">Tu colección</small></button>
         <button class="menu-item" data-go="gacha">Gacha<small>9 regiones · Pokémon y shinies</small></button>
-        <button class="menu-item" data-go="goals">Misiones<small id="menu-goals-sub">Misiones, logros y perfil</small></button>
+        <button class="menu-item" data-go="goals">Misiones<small id="menu-goals-sub">Diarias y semanales</small></button>
+        <button class="menu-item" data-go="ach">Logros<small id="menu-ach-sub">Tus medallas</small></button>
         <button class="menu-item" data-go="friends">Amigos<small id="menu-friends-sub">Juega en grupo, hasta 4</small></button>
         <button class="menu-item" data-go="lexicon">Léxico<small>Movimientos Z y objetos</small></button>
         <button class="menu-item" data-go="settings">Ajustes<small>Sonido, gráficos, controles y cuenta</small></button>
@@ -453,8 +454,8 @@
 <!-- ====== Misiones, logros y perfil ====== -->
 <section id="scr-goals" class="scr dim hidden">
   <div class="box wide">
-    <div class="row between"><h2>Misiones</h2><button class="btn small ghost" data-back>Volver</button></div>
-    <div class="tabs" id="goals-tabs">
+    <div class="row between"><h2 id="goals-h">Misiones</h2><button class="btn small ghost" data-back>Volver</button></div>
+    <div class="tabs hidden" id="goals-tabs">
       <div class="tab on" data-tab="missions">Misiones</div>
       <div class="tab" data-tab="ach">Logros</div>
       <div class="tab" data-tab="profile">Perfil</div>
@@ -616,6 +617,6 @@
 </section>
 
 <!-- datos generados -->
-<script defer src="js/app.min.js?v=2a3e4f87c4"></script>
+<script defer src="js/app.min.js?v=da53b5a293"></script>
 </body>
 </html>
