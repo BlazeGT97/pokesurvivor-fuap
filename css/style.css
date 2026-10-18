@@ -907,3 +907,30 @@ div.tm-row { cursor: default; }
   background: rgba(10,16,30,.88); border: 2px solid #a8894a; box-shadow: 0 6px 24px rgba(0,0,0,.6); }
 #hud-edit .he-bar b { display: block; color: #ffd23f; font-size: 15px; }
 #hud-edit .he-bar small { display: block; color: #b9cbf0; font-size: 12px; margin-top: 2px; }
+
+/* Perso (18-10): vista previa de la carta de nivel en el panel de estadísticas */
+#stats-panel .sp-grid b.chg { color: #ffd23f; }
+#stats-panel .sp-grid b.chg.max { color: #5fe08a; }
+#stats-panel .sp-prev { border: 1px solid rgba(255,210,63,.45); border-radius: 8px; padding: 6px 8px; margin-bottom: 8px; background: rgba(255,210,63,.07); }
+#stats-panel .sp-prev h4 { margin: 0 0 4px; }
+
+/* Perso (18-10): logo Intox2B (clic: presentación) */
+.logo-img { display: block; margin: 0 auto; width: min(400px, 100%); height: auto; cursor: pointer; image-rendering: auto;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,.45)); transition: transform .15s; }
+.logo-img:hover { transform: scale(1.03); }
+.menu-left .logo .logo-img { width: min(460px, 100%); }
+@media (max-height: 520px) { .logo-img, .menu-left .logo .logo-img { width: min(260px, 100%); } }
+#about-pop { position: fixed; inset: 0; z-index: 70; display: flex; align-items: center; justify-content: center; padding: 16px;
+  background: rgba(4,8,20,.72); }
+#about-pop .box { width: min(520px, 100%); max-height: calc(100vh - 32px); overflow: auto; text-align: left; }
+#about-pop .box img { width: min(320px, 90%); display: block; margin: 0 auto 8px; }
+#about-pop p { font-size: 14px; line-height: 1.45; margin: 8px 0; }
+#about-pop .about-mail { font-weight: 800; color: var(--gold); user-select: all; }
+
+/* Perso (18-10): ficha de mejoras de un movimiento en el Léxico */
+#lex-tip { position: fixed; z-index: 65; display: none; width: min(320px, calc(100vw - 16px)); max-height: calc(100vh - 16px); overflow: auto;
+  padding: 10px 12px; border-radius: 10px; background: rgba(10,16,30,.96); border: 2px solid #a8894a; box-shadow: 0 6px 20px rgba(0,0,0,.6);
+  font-size: 12px; color: #dfe8ff; pointer-events: none; }
+#lex-tip .lt-h { margin: 8px 0 3px; color: #8fa3c4; font-weight: 800; text-transform: uppercase; font-size: 11px; }
+#lex-tip ul { margin: 0; padding: 0; list-style: none; }
+#lex-tip li { margin: 2px 0; }
