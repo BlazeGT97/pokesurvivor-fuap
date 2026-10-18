@@ -668,15 +668,16 @@
 <section id="scr-pause" class="scr dim hidden">
   <div class="box center" style="width:min(460px,100%)">
     <h2>Pausa</h2>
-    <p class="sub kbd-hint"><kbd>WASD</kbd> moverse · <kbd>1</kbd>–<kbd>4</kbd> movimiento · <kbd>Q</kbd>/<kbd>E</kbd> ciclar · <kbd>Esc</kbd> pausa</p>
+    <div class="sub kbd-hint pause-keys"><span><kbd>WASD</kbd> <i>moverse</i></span><span><kbd>1</kbd>–<kbd>4</kbd> <i>movimiento</i></span><span><kbd>Q</kbd>/<kbd>E</kbd> <i>ciclar</i></span><span><kbd>Esc</kbd> <i>pausa</i></span></div>
     <p class="sub touch-hint">Arrastra el dedo para moverte · toca un ataque para cambiarlo</p>
     <p id="pause-coop" class="note hidden">Partida en grupo: el juego sigue mientras estás aquí.</p>
     <div id="pause-sound" class="sound-inline"></div>
-    <div class="row" style="justify-content:center">
-      <button id="btn-resume" class="btn gold">Continuar</button>
+    <!-- perso (18-10): botones en rejilla (Continuar ancho; Ajustes · ATH; Abandonar abajo) -->
+    <div class="pause-grid">
+      <button id="btn-resume" class="btn gold pg-wide">Continuar</button>
       <button id="btn-pause-settings" class="btn">Ajustes</button>
       <button id="btn-pause-hud" class="btn">ATH</button>
-      <button id="btn-quit" class="btn">Abandonar run</button>
+      <button id="btn-quit" class="btn danger pg-wide">Abandonar run</button>
     </div>
   </div>
 </section>
@@ -691,7 +692,7 @@
 
 <!-- datos generados -->
 <script src="config.js"></script>
-<script defer src="js/app.min.js?v=528e376294"></script>
+<script defer src="js/app.min.js?v=03a546c9c1"></script>
 <script>(function () { var l = document.getElementById('priv-local'); if (!l) return;
   if (window.PS_FIREBASE && window.PS_FIREBASE.apiKey) { l.remove(); return; }
   for (var n = l.nextElementSibling; n; n = n.nextElementSibling) n.style.display = 'none'; })();</script>

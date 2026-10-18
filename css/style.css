@@ -970,3 +970,12 @@ div.tm-row { cursor: default; }
 #card-prev .sp-grid b { text-align: right; color: #fff; }
 #card-prev .sp-grid b.chg { color: #ffd23f; }
 #card-prev .sp-grid b.chg.max { color: #5fe08a; }
+
+/* Perso (18-10): menú de pausa ordenado */
+#scr-pause .pause-keys { display: grid; grid-template-columns: repeat(2, auto); justify-content: center; gap: 6px 22px; margin: 4px auto 10px; }
+#scr-pause .pause-keys span { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+#scr-pause .pause-keys i { font-style: normal; }
+#scr-pause .pause-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+#scr-pause .pause-grid .pg-wide { grid-column: 1 / -1; }
+#scr-pause .pause-grid .btn { width: 100%; }
+#scr-pause #pause-sound [data-mute] { display: none; }
