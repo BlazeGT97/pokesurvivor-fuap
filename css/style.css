@@ -997,3 +997,5 @@ div.tm-row { cursor: default; }
 #resume-pop .pause-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 #resume-pop .pause-grid .pg-wide { grid-column: 1 / -1; }
 #resume-pop .pause-grid .btn { width: 100%; }
+.tm-row.tm-locked { opacity: .62; border-style: dashed; }
+.tm-row.tm-locked:hover { opacity: .9; }
