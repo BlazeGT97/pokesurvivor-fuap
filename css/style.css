@@ -946,3 +946,10 @@ div.tm-row { cursor: default; }
   transition: transform .25s ease, opacity .25s; opacity: 0; }
 #inv-note.in { transform: translate(0, -50%); opacity: 1; }
 #inv-note.out { transform: translate(120%, -50%); opacity: 0; }
+
+#about-pop a:not(.btn) { color: #ffe08a; text-decoration: underline; font-weight: 700; }
+#about-pop a:not(.btn):hover { color: #fff3c0; }
+#about-pop .about-mail { color: #ffd23f !important; cursor: pointer; }
+#about-pop textarea { width: 100%; box-sizing: border-box; resize: vertical; min-height: 90px; padding: 8px; border-radius: 8px;
+  background: rgba(0,0,0,.35); color: #fff; border: 1px solid rgba(255,210,63,.4); font: inherit; font-size: 14px; }
+#about-pop a.btn { text-decoration: none; display: inline-flex; align-items: center; }
