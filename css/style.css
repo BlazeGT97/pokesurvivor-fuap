@@ -830,6 +830,7 @@ div.tm-row { cursor: default; }
 #stats-panel h4 { margin: 10px 0 4px; font-size: 14px; color: #ffcb3d; }
 #stats-panel .sp-grid { display: grid; grid-template-columns: 1fr auto; gap: 3px 10px; }
 #stats-panel .sp-grid span { color: #b9c7ea; }
+#stats-panel .sp-grid b.max { color: #5fe08a; }
 #stats-panel .sp-moves { line-height: 1.7; font-size: 12px; }
 #stats-panel .sp-moves small { color: #b9c7ea; }
 @media (max-width: 900px) { #stats-panel { width: 190px; font-size: 11px; right: 6px; } }
@@ -888,3 +889,21 @@ div.tm-row { cursor: default; }
 .fav-star:hover { opacity: .7; }
 .fav-star.on { opacity: 1; filter: none; }
 .fav-tab b { display: inline-flex; align-items: center; gap: 4px; }
+
+/* Perso: iconos de los jugadores en la pantalla de mejora (coop): ✓ = ha terminado sus puntos. */
+.lvl-players { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 8px; }
+.lvl-players.hidden { display: none; }
+.lvl-players .lp { display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: 999px;
+  border: 2px solid var(--c, #888); background: rgba(10,14,28,.6); font-size: 12px; font-weight: 700; color: #e8eeff; }
+.lvl-players .lp.done { background: color-mix(in srgb, var(--c) 28%, rgba(10,14,28,.6)); }
+.lvl-players .lp .st { font-size: 12px; }
+.lvl-players .lp.done .st { color: #7dff9a; }
+.lvl-players .lp.wait .st { opacity: .7; }
+
+/* Perso (18-10): editor del ATH (js/ui/hud-edit.js) */
+#hud-edit { position: fixed; inset: 0; z-index: 60; touch-action: none; user-select: none; }
+#hud-edit .he-bar { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: min(420px, calc(100% - 32px)); padding: 10px 14px; text-align: center; border-radius: 12px;
+  background: rgba(10,16,30,.88); border: 2px solid #a8894a; box-shadow: 0 6px 24px rgba(0,0,0,.6); }
+#hud-edit .he-bar b { display: block; color: #ffd23f; font-size: 15px; }
+#hud-edit .he-bar small { display: block; color: #b9cbf0; font-size: 12px; margin-top: 2px; }
