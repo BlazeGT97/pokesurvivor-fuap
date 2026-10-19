@@ -907,6 +907,10 @@ div.tm-row { cursor: default; }
   background: rgba(10,16,30,.88); border: 2px solid #a8894a; box-shadow: 0 6px 24px rgba(0,0,0,.6); }
 #hud-edit .he-bar b { display: block; color: #ffd23f; font-size: 15px; }
 #hud-edit .he-bar small { display: block; color: #b9cbf0; font-size: 12px; margin-top: 2px; }
+#hud-edit .he-size { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 8px; min-height: 30px; flex-wrap: wrap; }
+#hud-edit .he-size .he-name { color: #ffd23f; font-weight: 800; font-size: 13px; margin-right: 4px; }
+#hud-edit .he-size .he-pct { display: inline-block; min-width: 54px; color: #fff; font-size: 14px; }
+#hud-edit .he-size .btn { min-width: 34px; }
 
 /* Perso (18-10): vista previa de la carta de nivel en el panel de estadísticas */
 #stats-panel .sp-grid b.chg { color: #ffd23f; }
