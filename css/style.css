@@ -999,3 +999,21 @@ div.tm-row { cursor: default; }
 #resume-pop .pause-grid .btn { width: 100%; }
 .tm-row.tm-locked { opacity: .62; border-style: dashed; }
 .tm-row.tm-locked:hover { opacity: .9; }
+
+/* Perso (19-10): ventanas de elección (vínculo, objeto) más pequeñas y centradas, sin quedar bajo el panel de estadísticas. */
+#scr-bond .box, #scr-item .box { width: min(520px, 100%); padding: 14px 16px; }
+#scr-bond .box h2, #scr-item .box h2 { margin: 0 0 4px; }
+#bond-cards, #item-cards { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+#bond-cards .card, #item-cards .card { width: 100%; padding: 8px 10px; }
+#bond-cards .card .ds, #item-cards .card .ds { font-size: 13px; }
+@media (max-width: 1180px) { #scr-bond, #scr-item { padding-right: 270px; } }
+@media (max-width: 700px) { #scr-bond, #scr-item { padding-right: 10px; } }
+@media (max-height: 520px) {
+  #scr-bond .box, #scr-item .box { width: min(560px, 100%); padding: 8px 10px; max-height: calc(100vh - 12px); overflow-y: auto; }
+  #scr-bond .box .sub, #scr-item .box .sub { margin: 0 0 4px; font-size: 12px; }
+  #bond-cards, #item-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+  #bond-cards .card .ico, #item-cards .card .ico { width: 36px; height: 36px; flex: 0 0 36px; }
+  #bond-cards .card .key, #item-cards .card .key { display: none; }
+  #bond-cards .card, #item-cards .card { padding: 5px 8px; }
+  #bond-cards .card .ds, #item-cards .card .ds { font-size: 11px; }
+}
