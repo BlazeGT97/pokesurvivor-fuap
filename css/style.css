@@ -1161,3 +1161,27 @@ div.tm-row { cursor: default; }
   #scr-menu.v2 .pp-info { order: 0; margin-top: 0; align-self: flex-end; }
   #scr-menu.v2 .pp-banner .partner-card { margin-top: 0; }
 }
+
+/* Perso (20-10): fondo animado del cuadro del nivel (Zona Cero: 3 mundos, fundido cada 5 s). */
+#scr-menu.v2 .pp-banner { isolation: isolate; }
+#scr-menu.v2 .pp-banner::before { z-index: 0; }
+#scr-menu.v2 .pp-bgs { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+#scr-menu.v2 .pp-bgs i { position: absolute; inset: 0; background: center / cover no-repeat; image-rendering: pixelated; }
+#scr-menu.v2 .pp-bgs i.zzf { animation: zzfade 15s linear infinite both; animation-delay: -1s; }
+#scr-menu.v2 .pp-bgs i.zz1 { animation-delay: -11s; }
+#scr-menu.v2 .pp-bgs i.zz2 { animation-delay: -6s; }
+/* chacun: apparaît en 1 s, reste 4 s, disparaît en 1 s pendant que le suivant apparaît */
+@keyframes zzfade { 0% { opacity: 0; } 6.67% { opacity: 1; } 33.33% { opacity: 1; } 40% { opacity: 0; } 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { #scr-menu.v2 .pp-bgs i.zzf { animation: none; } #scr-menu.v2 .pp-bgs i.zz1, #scr-menu.v2 .pp-bgs i.zz2 { display: none; } }
+/* Perso (20-10): logo más grande y más a la derecha, entre el fondo y el cuadro del nivel (el cuadro le pasa por encima). */
+#scr-menu.v2 .menu-left .logo { top: 2px; left: clamp(24px, 4vw, 90px); z-index: 0; pointer-events: none; }
+/* (ancho: lo que deja libre la barra de arriba, que va a la derecha) */
+#scr-menu.v2 .menu-left .logo .logo-img { width: clamp(200px, calc(100vw - 1130px), 400px); }
+#scr-menu.v2 .play-panel { position: relative; z-index: 1; }
+
+/* Perso (20-10): tchat dentro del salón multijugador (menú). */
+#scr-menu.v2 .menu-bottom .room-chat { flex: 1 1 0; min-width: 240px; height: 120px; box-sizing: border-box; padding: 6px; border-radius: 12px;
+  background: rgba(10,16,34,.85); border: 2px solid #4a64b0; }
+#scr-menu.v2 .menu-bottom .room-chat.hidden { display: none; }
+@media (max-width: 1280px) { #scr-menu.v2 .menu-bottom { flex-wrap: wrap; } #scr-menu.v2 .menu-bottom .room-chat { flex-basis: 100%; height: 110px; } }
+@media (max-height: 520px) { #scr-menu.v2 .menu-bottom { flex-wrap: wrap; } #scr-menu.v2 .menu-bottom .room-chat { flex-basis: 100%; height: 96px; font-size: 12px; } }
