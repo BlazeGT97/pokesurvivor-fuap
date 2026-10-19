@@ -1017,3 +1017,128 @@ div.tm-row { cursor: default; }
   #bond-cards .card, #item-cards .card { padding: 5px 8px; }
   #bond-cards .card .ds, #item-cards .card .ds { font-size: 11px; }
 }
+
+/* =====================================================================
+ * Perso (19-10): pantalla principal v2 (#scr-menu.v2).
+ *   Ordenador: logo arriba a la izquierda · cuadro de juego (banner del nivel + pestañas + Jugar)
+ *   · menú a la derecha · estadísticas y salón abajo.
+ *   Tablet vertical / móvil vertical: todo en una columna que se desplaza.
+ *   Móvil horizontal: cuadro de juego a la izquierda, menú (2 columnas) a la derecha.
+ * ===================================================================== */
+#scr-menu.v2 { display: grid; grid-template-columns: minmax(0, 1fr) clamp(250px, 24vw, 340px); gap: 14px;
+  padding: 98px 20px 30px; align-items: stretch; justify-content: stretch; overflow: hidden; box-sizing: border-box; }
+#scr-menu.v2 .menu-left { display: flex; flex-direction: column; gap: 12px; padding: 0; min-height: 0; min-width: 0; justify-content: stretch; align-items: stretch; overflow: visible; }
+#scr-menu.v2 .menu-left .logo { position: absolute; top: 6px; left: 18px; margin: 0; z-index: 3; }
+#scr-menu.v2 .menu-left .logo .logo-img { width: clamp(180px, 19vw, 260px); }
+#scr-menu.v2 .logo-phone { display: none; }
+#scr-menu.v2 .play-panel { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 12px; margin: 0; max-width: none; width: auto; padding: 14px; box-sizing: border-box; }
+#scr-menu.v2 .pp-banner { position: relative; flex: 1; min-height: 220px; display: flex; align-items: center; justify-content: space-between; gap: 18px;
+  padding: 18px 20px; border: 2px solid #ffd23f; border-radius: 14px; overflow: hidden; background: #0c1330 center/cover no-repeat;
+  box-shadow: 0 0 0 2px rgba(255,210,63,.18), 0 0 18px rgba(255,210,63,.2); image-rendering: pixelated; }
+#scr-menu.v2 .pp-banner.zz { border-color: #c9a6ff; box-shadow: 0 0 0 2px rgba(201,166,255,.22), 0 0 18px rgba(123,92,255,.35); }
+#scr-menu.v2 .pp-banner::before { content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(90deg, rgba(6,10,26,.88) 0%, rgba(6,10,26,.55) 45%, rgba(6,10,26,.25) 70%, rgba(6,10,26,.55) 100%), linear-gradient(0deg, rgba(6,10,26,.55), transparent 55%); }
+#scr-menu.v2 .pp-info { position: relative; z-index: 1; align-self: flex-end; min-width: 0; text-align: left; display: flex; flex-direction: column; gap: 6px; }
+#scr-menu.v2 .pp-dif { align-self: flex-start; padding: 2px 10px; border-radius: 6px; font-size: 12px; font-weight: 800; color: #0b1020; }
+#scr-menu.v2 .pp-name { font-size: clamp(20px, 2.4vw, 32px); font-weight: 800; color: #fff; text-shadow: 0 3px 0 #000, 0 0 10px rgba(0,0,0,.6); line-height: 1.1; }
+#scr-menu.v2 .pp-types { display: flex; flex-wrap: wrap; gap: 3px; align-items: center; font-size: 13px; color: #d8d2ff; }
+#scr-menu.v2 .pp-types img { width: 20px; height: 20px; }
+#scr-menu.v2 .pp-facts { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 13px; color: #dbe5ff; text-shadow: 0 1px 2px #000; }
+#scr-menu.v2 .pp-facts span:first-child { color: #ffe08a; font-weight: 700; }
+/* Medallón del compañero: siempre DENTRO del banner (se encoge con él). */
+#scr-menu.v2 .pp-banner .partner-card { position: relative; z-index: 1; flex: none; margin: 0; padding: 10px 12px; max-height: 100%; box-sizing: border-box;
+  display: flex; flex-direction: column; align-items: center; gap: 2px; background: rgba(10,16,40,.86); border: 2px solid rgba(255,255,255,.75); border-radius: 14px; }
+#scr-menu.v2 .pp-banner #menu-partner { width: clamp(110px, 13vw, 190px); height: auto; max-height: 26vh; aspect-ratio: 260 / 200; object-fit: contain; }
+#scr-menu.v2 .pp-banner .partner-card .nm { font-size: clamp(15px, 1.6vw, 22px); }
+#scr-menu.v2 .pp-banner .partner-card .lv { font-size: 12px; }
+#scr-menu.v2 .pp-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; flex: none; }
+#scr-menu.v2 .lvl-tab { padding: 9px 6px; border-radius: 10px; border: 2px solid #3a4f8a; background: rgba(255,255,255,.04); color: #e8eefc;
+  font: inherit; font-weight: 800; font-size: 14px; cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#scr-menu.v2 .lvl-tab:hover:not([disabled]) { border-color: #6f86c8; }
+#scr-menu.v2 .lvl-tab.on { border-color: #ffd23f; background: rgba(255,210,63,.13); color: #ffd23f; }
+#scr-menu.v2 .lvl-tab.zz { color: #d8c8ff; background: linear-gradient(120deg, rgba(43,26,94,.75), rgba(15,58,74,.75)); border-color: #8a7bc8; }
+#scr-menu.v2 .lvl-tab.zz.on { border-color: #ffd23f; color: #fff; }
+#scr-menu.v2 .lvl-tab[disabled] { opacity: .45; cursor: default; }
+#scr-menu.v2 .pp-play { flex: none; width: 100%; }
+#scr-menu.v2 .menu-bottom { display: flex; gap: 12px; flex: none; min-height: 0; }
+#scr-menu.v2 .menu-statbox { margin: 0; padding: 12px 16px; flex: 0 0 auto; min-width: 230px; font-size: 14px; color: var(--muted); }
+#scr-menu.v2 .menu-bottom .room-panel { margin: 0; flex: 1; max-width: none; }
+#scr-menu.v2 .menu-right { width: auto; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; min-height: 0; justify-content: flex-start; overflow: visible; background: none; }
+#scr-menu.v2 .menu-right > :first-child, #scr-menu.v2 .menu-right > :last-child { margin: 0; }
+#scr-menu.v2 .menu-box { flex: 1; min-height: 0; overflow-y: auto; margin: 0; padding: 10px 12px; }
+#scr-menu.v2 .menu-list { display: flex; flex-direction: column; gap: 2px; }
+
+/* Tablet horizontal y portátiles pequeños: menú más estrecho; el logo baja bajo el menú (la barra de arriba lo tapaba). */
+@media (max-width: 1280px) and (min-height: 521px) {
+  #scr-menu.v2 { grid-template-columns: minmax(0, 1fr) clamp(240px, 26vw, 300px); gap: 10px; padding: 66px 12px 28px; }
+  #scr-menu.v2 .menu-left .logo { display: none; }
+  #scr-menu.v2 .logo-phone { display: block; flex: none; text-align: center; margin: 0; }
+  #scr-menu.v2 .logo-phone .logo-img { width: min(280px, 100%); }
+  #scr-menu.v2 .menu-item small { font-size: 11px; }
+  .news-btn span, .contact-btn span { display: none; }
+  #scr-menu.v2 .menu-bottom { min-width: 0; }
+  #scr-menu.v2 .menu-bottom .room-panel { min-width: 0; padding: 8px 10px; gap: 8px; }
+  #scr-menu.v2 .room-panel .rp-info { min-width: 0; }
+  #scr-menu.v2 .room-panel .rp-mate { width: 54px; }
+  #scr-menu.v2 .room-panel .rp-mate canvas { width: 48px; height: 40px; }
+  #scr-menu.v2 .room-panel .rp-btns .btn { padding: 5px 9px; font-size: 13px; white-space: normal; }
+}
+
+/* Vertical (tablets y móviles en vertical, o ventanas estrechas): una sola columna que se desplaza. */
+@media (max-width: 900px) and (min-height: 521px) {
+  #scr-menu.v2 { display: flex; flex-direction: column; gap: 10px; padding: 64px 10px 14px; overflow-y: auto; overscroll-behavior: contain; }
+  #scr-menu.v2 .menu-left { display: contents; }
+  #scr-menu.v2 .menu-left .logo { position: static; order: 1; display: flex; justify-content: center; }
+  #scr-menu.v2 .menu-left .logo .logo-img { width: min(340px, 72vw); }
+  #scr-menu.v2 .play-panel { order: 2; flex: none; }
+  #scr-menu.v2 .pp-banner { min-height: 240px; flex: none; }
+  #scr-menu.v2 .menu-right { order: 3; flex: none; }
+  #scr-menu.v2 .menu-box { overflow: visible; }
+  #scr-menu.v2 .menu-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  #scr-menu.v2 .menu-item { flex-direction: column; text-align: center; justify-content: center; gap: 4px; padding: 10px 4px; font-size: 14px;
+    display: flex; border: 1px solid #3a4f8a; border-radius: 10px; background: rgba(255,255,255,.03); }
+  #scr-menu.v2 .menu-item small { display: none; }
+  #scr-menu.v2 .menu-item::before { display: none; }
+  #scr-menu.v2 .menu-bottom { order: 4; flex-wrap: wrap; }
+  #scr-menu.v2 .menu-statbox { flex: 1 1 100%; }
+}
+/* Móvil vertical: banner más compacto, pestañas en 2×2. */
+@media (max-width: 520px) and (min-height: 521px) {
+  #scr-menu.v2 .pp-banner { flex-direction: column-reverse; align-items: stretch; min-height: 0; padding: 12px; gap: 10px; }
+  #scr-menu.v2 .pp-banner .partner-card { align-self: center; }
+  #scr-menu.v2 .pp-banner #menu-partner { width: 120px; }
+  #scr-menu.v2 .pp-info { align-self: stretch; }
+  #scr-menu.v2 .pp-tabs { grid-template-columns: 1fr 1fr; }
+  #scr-menu.v2 .pp-types img { width: 16px; height: 16px; }
+  #scr-menu.v2 .pp-facts { font-size: 12px; }
+}
+
+/* Móvil horizontal (poca altura): cuadro de juego a la izquierda, menú a la derecha (2 columnas); sin estadísticas. */
+@media (max-height: 520px) {
+  #scr-menu.v2 { grid-template-columns: minmax(0, 1fr) min(44vw, 380px); gap: 8px; padding: 46px 8px 6px; }
+  #scr-menu.v2 .menu-left { overflow-y: auto; overscroll-behavior: contain; }
+  #scr-menu.v2 .menu-left .logo { display: none; }
+  #scr-menu.v2 .play-panel { padding: 8px; gap: 6px; flex: 1 0 auto; }
+  #scr-menu.v2 .pp-banner { min-height: 0; flex: 1 0 auto; padding: 8px 10px; gap: 8px; border-radius: 10px; }
+  #scr-menu.v2 .pp-name { font-size: 17px; }
+  #scr-menu.v2 .pp-dif { font-size: 10px; padding: 1px 6px; }
+  #scr-menu.v2 .pp-types img { width: 13px; height: 13px; }
+  #scr-menu.v2 .pp-facts { font-size: 10.5px; gap: 1px 10px; }
+  #scr-menu.v2 .pp-facts span:nth-child(3) { display: none; }
+  #scr-menu.v2 .pp-banner .partner-card { padding: 4px 6px; border-radius: 10px; }
+  #scr-menu.v2 .pp-banner #menu-partner { width: clamp(70px, 13vw, 110px); max-height: 30vh; }
+  #scr-menu.v2 .pp-banner .partner-card .nm { font-size: 13px; }
+  #scr-menu.v2 .pp-banner .partner-card .lv { font-size: 10px; }
+  #scr-menu.v2 .pp-banner .partner-card .lv .type-chip, #scr-menu.v2 .pp-banner .partner-card .lv span { font-size: 9px; padding: 0 4px; }
+  #scr-menu.v2 .pp-upg { font-size: 11px; padding: 1px 6px; margin-top: 2px; }
+  #scr-menu.v2 .pp-tabs { gap: 4px; }
+  #scr-menu.v2 .lvl-tab { padding: 4px 3px; font-size: 11.5px; border-radius: 8px; }
+  #scr-menu.v2 .pp-play { font-size: 17px; padding: 5px 10px; }
+  #scr-menu.v2 .pp-play small { display: none; }
+  #scr-menu.v2 .menu-statbox { display: none; }
+  #scr-menu.v2 .menu-right { overflow-y: auto; }
+  #scr-menu.v2 .menu-box { flex: none; overflow: visible; padding: 6px 8px; }
+  #scr-menu.v2 .menu-list { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 4px; }
+  #scr-menu.v2 .logo-phone { display: block; margin: 2px 0 0; flex: none; text-align: center; }
+  #scr-menu.v2 .logo-phone .logo-img { width: min(260px, 100%); }
+}
