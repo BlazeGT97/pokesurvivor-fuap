@@ -75,6 +75,8 @@
 .lvl-card.zz.on { border-color: #ffd23f; box-shadow: 0 0 14px rgba(255,210,63,.35), inset 0 0 18px rgba(63,224,192,.15); }
 .lvl-card.zz .ln { color: #fff; font-size: 30px; text-shadow: 0 0 6px #c9a6ff, 0 0 14px #7b5cff, 0 0 24px #7b5cff; }
 .lvl-card.zz .zz-tag { display: block; font-size: 11px; color: #c9c2ff; margin-top: 3px; letter-spacing: .03em; }
+.contact-btn svg { vertical-align: -3px; }
+@media (max-width: 900px) { .contact-btn span { display: none; } }
 .lvl-card .lk { margin-left: auto; font-size: 12px; font-weight: 800; color: #ff9a8a; white-space: nowrap; }
 @media (max-width: 760px) and (min-height: 521px) {
   .play-panel { flex-direction: column; padding: 10px; gap: 10px; max-width: 420px; }
@@ -149,7 +151,7 @@
 <section id="scr-login" class="scr hidden">
   <div class="box" style="width:min(420px,100%)">
     <div class="logo">
-      <img class="logo-img" src="assets/ui/logo-intox3.webp" alt="PokéSurvivor Intox2B Enhanced Version" draggable="false" translate="no">
+      <img class="logo-img" src="assets/ui/logo-intox4.webp" alt="PokéSurvivor Enhanced Version" draggable="false" translate="no">
     </div>
     <p class="login-tag">Sobrevive a las hordas con tu compañero Pokémon · gratis, en PC y móvil</p>
     <div class="tabs">
@@ -224,7 +226,7 @@
 <section id="scr-menu" class="scr hidden">
   <div class="menu-left">
     <div class="logo">
-      <img class="logo-img" src="assets/ui/logo-intox3.webp" alt="PokéSurvivor Intox2B Enhanced Version" draggable="false" translate="no">
+      <img class="logo-img" src="assets/ui/logo-intox4.webp" alt="PokéSurvivor Enhanced Version" draggable="false" translate="no">
     </div>
     <!-- perso: cuadro central: tu Pokémon (clic: sus mejoras) y la elección del nivel -->
     <div class="play-panel">
@@ -259,7 +261,7 @@
       </div>
     </div>
     <!-- perso (18-10): en el móvil el logo va aquí, bajo el menú (arriba a la izquierda no cabe) -->
-    <div class="logo logo-phone"><img class="logo-img" src="assets/ui/logo-intox3.webp" alt="PokéSurvivor Intox2B Enhanced Version" draggable="false" translate="no"></div>
+    <div class="logo logo-phone"><img class="logo-img" src="assets/ui/logo-intox4.webp" alt="PokéSurvivor Enhanced Version" draggable="false" translate="no"></div>
     <div class="box" style="padding:14px 18px">
       <div id="menu-stats" style="font-size:14px;color:var(--muted)"></div>
     </div>
@@ -271,6 +273,7 @@
   <div class="pill" id="tickets-pill" title="Tickets del gacha"></div>
   <div class="pill" id="user-pill"></div>
   <button id="btn-news" class="btn small ghost news-btn" title="Novedades"></button>
+  <button id="btn-contact" class="btn small ghost contact-btn" title="Contacto"></button>
   <button id="btn-support" class="btn small gold hidden" title="Apoyar el PokéSurvivor original (JPTER78)"></button>
   <button id="btn-sound" class="btn small ghost" title="Sonido"></button>
   <button id="btn-full" class="btn small ghost hidden" title="Pantalla completa"></button>
@@ -664,7 +667,7 @@
 
 <!-- datos generados -->
 <script src="config.js"></script>
-<script defer src="js/app.min.js?v=fb55f3b1bf"></script>
+<script defer src="js/app.min.js?v=b94e361a4c"></script>
 <script>(function () { var l = document.getElementById('priv-local'); if (!l) return;
   if (window.PS_FIREBASE && window.PS_FIREBASE.apiKey) { l.remove(); return; }
   for (var n = l.nextElementSibling; n; n = n.nextElementSibling) n.style.display = 'none'; })();</script>
