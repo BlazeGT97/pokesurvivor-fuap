@@ -70,6 +70,11 @@
 .lvl-card small { display: block; font-size: 11px; color: #9fb1c9; }
 .lvl-card .lt { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 4px; }
 .lvl-card .lt img { width: 18px; height: 18px; }
+.lvl-card.zz { background: radial-gradient(1px 1px at 12% 30%, #fff, transparent), radial-gradient(1px 1px at 40% 72%, #fff, transparent), radial-gradient(1.5px 1.5px at 68% 22%, #bfe8ff, transparent), radial-gradient(1px 1px at 86% 66%, #ffd0f4, transparent), radial-gradient(1px 1px at 56% 46%, #fff, transparent), radial-gradient(1px 1px at 25% 80%, #c8fff4, transparent), linear-gradient(120deg, #1a1240 0%, #2b1a5e 45%, #0f3a4a 100%);
+  border-color: #8a7bc8; box-shadow: 0 0 14px rgba(138,123,200,.45), inset 0 0 18px rgba(63,224,192,.15); }
+.lvl-card.zz.on { border-color: #ffd23f; box-shadow: 0 0 14px rgba(255,210,63,.35), inset 0 0 18px rgba(63,224,192,.15); }
+.lvl-card.zz .ln { color: #fff; font-size: 30px; text-shadow: 0 0 6px #c9a6ff, 0 0 14px #7b5cff, 0 0 24px #7b5cff; }
+.lvl-card.zz .zz-tag { display: block; font-size: 11px; color: #c9c2ff; margin-top: 3px; letter-spacing: .03em; }
 .lvl-card .lk { margin-left: auto; font-size: 12px; font-weight: 800; color: #ff9a8a; white-space: nowrap; }
 @media (max-width: 760px) and (min-height: 521px) {
   .play-panel { flex-direction: column; padding: 10px; gap: 10px; max-width: 420px; }
@@ -659,7 +664,7 @@
 
 <!-- datos generados -->
 <script src="config.js"></script>
-<script defer src="js/app.min.js?v=4571f0c79c"></script>
+<script defer src="js/app.min.js?v=d35da536f9"></script>
 <script>(function () { var l = document.getElementById('priv-local'); if (!l) return;
   if (window.PS_FIREBASE && window.PS_FIREBASE.apiKey) { l.remove(); return; }
   for (var n = l.nextElementSibling; n; n = n.nextElementSibling) n.style.display = 'none'; })();</script>
