@@ -103,6 +103,15 @@
   .room-panel .rp-info b { font-size: 13px; }
   .room-panel .rp-mate { width: 52px; } .room-panel .rp-mate canvas { width: 48px; height: 40px; } .room-panel .rp-mate.empty { height: 52px; }
   .room-panel .rp-btns { flex-direction: row; width: 100%; } .room-panel .rp-btns .btn { flex: 1; }
+  /* Perso (19-10): el salón ya no se corta en el móvil: una sola fila compacta y la columna puede bajar */
+  #scr-menu.has-room .menu-left { justify-content: flex-start; overflow-y: auto; overscroll-behavior: contain; }
+  #scr-menu.has-room .menu-left > * { flex-shrink: 0; }
+  .room-panel { flex-wrap: nowrap; padding: 4px 8px; gap: 6px; margin-top: 4px; }
+  .room-panel .rp-info { min-width: 0; flex: 0 1 auto; }
+  .room-panel .rp-info b { font-size: 12px; } .room-panel .rp-info small { font-size: 10px; }
+  .room-panel .rp-mate { width: 44px; font-size: 10px; } .room-panel .rp-mate canvas { width: 40px; height: 32px; }
+  .room-panel .rp-mate span { max-width: 44px; } .room-panel .rp-mate.empty { height: 42px; }
+  .room-panel .rp-btns { flex-direction: column; width: auto; gap: 4px; } .room-panel .rp-btns .btn { flex: none; padding: 3px 8px; font-size: 12px; }
 }
 /* Perso: Gacha à l'horizontale sur téléphone: les boutons de tirage visibles sans défiler, les taux à droite. */
 @media (max-height: 520px) {
@@ -649,7 +658,7 @@
 
 <!-- datos generados -->
 <script src="config.js"></script>
-<script defer src="js/app.min.js?v=7ee06b38e6"></script>
+<script defer src="js/app.min.js?v=48cb5e73c3"></script>
 <script>(function () { var l = document.getElementById('priv-local'); if (!l) return;
   if (window.PS_FIREBASE && window.PS_FIREBASE.apiKey) { l.remove(); return; }
   for (var n = l.nextElementSibling; n; n = n.nextElementSibling) n.style.display = 'none'; })();</script>
