@@ -1172,9 +1172,8 @@ div.tm-row { cursor: default; }
 #scr-menu.v2 .pp-bgs i.zz2 { animation-delay: -6s; }
 /* chacun: apparaît en 1 s, reste 4 s, disparaît en 1 s pendant que le suivant apparaît */
 @keyframes zzfade { 0% { opacity: 0; } 6.67% { opacity: 1; } 33.33% { opacity: 1; } 40% { opacity: 0; } 100% { opacity: 0; } }
-@media (prefers-reduced-motion: reduce) { #scr-menu.v2 .pp-bgs i.zzf { animation: none; } #scr-menu.v2 .pp-bgs i.zz1, #scr-menu.v2 .pp-bgs i.zz2 { display: none; } }
 /* Perso (20-10): logo más grande y más a la derecha, entre el fondo y el cuadro del nivel (el cuadro le pasa por encima). */
-#scr-menu.v2 .menu-left .logo { top: 2px; left: clamp(24px, 4vw, 90px); z-index: 0; pointer-events: none; }
+#scr-menu.v2 .menu-left .logo { top: 2px; left: clamp(24px, 4vw, 90px); z-index: 5; pointer-events: none; }   /* (por encima del cuadro del nivel) */
 /* (ancho: lo que deja libre la barra de arriba, que va a la derecha) */
 #scr-menu.v2 .menu-left .logo .logo-img { width: clamp(200px, calc(100vw - 1130px), 400px); }
 #scr-menu.v2 .play-panel { position: relative; z-index: 1; }
