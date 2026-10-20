@@ -1201,3 +1201,4 @@ div.tm-row { cursor: default; }
 .news-pin p { margin: 0; line-height: 1.4; font-size: 15px; }
 .news-pin ul { margin: 0; padding-left: 20px; } .news-pin li { margin: 3px 0; font-size: 15px; }
 .news-pin .news-pin-c { margin-top: 10px; font-size: 14px; color: #c9d8ff; }
+.news-pin a { color: #ffd23f; text-decoration: underline; word-break: break-all; }
