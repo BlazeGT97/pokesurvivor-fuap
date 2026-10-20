@@ -1128,7 +1128,6 @@ div.tm-row { cursor: default; }
   #scr-menu.v2 .pp-dif { font-size: 10px; padding: 1px 6px; }
   #scr-menu.v2 .pp-types img { width: 13px; height: 13px; }
   #scr-menu.v2 .pp-facts { font-size: 10.5px; gap: 1px 10px; }
-  #scr-menu.v2 .pp-facts span:nth-child(3) { display: none; }
   #scr-menu.v2 .pp-banner .partner-card { padding: 4px 6px; border-radius: 10px; }
   #scr-menu.v2 .pp-banner #menu-partner { width: clamp(70px, 13vw, 110px); max-height: 30vh; }
   #scr-menu.v2 .pp-banner .partner-card .nm { font-size: 13px; }
@@ -1184,3 +1183,13 @@ div.tm-row { cursor: default; }
 #scr-menu.v2 .menu-bottom .room-chat.hidden { display: none; }
 @media (max-width: 1280px) { #scr-menu.v2 .menu-bottom { flex-wrap: wrap; } #scr-menu.v2 .menu-bottom .room-chat { flex-basis: 100%; height: 110px; } }
 @media (max-height: 520px) { #scr-menu.v2 .menu-bottom { flex-wrap: wrap; } #scr-menu.v2 .menu-bottom .room-chat { flex-basis: 100%; height: 96px; font-size: 12px; } }
+
+/* Perso (20-10): el cuadro del nivel deja sitio abajo (los datos ya no se cortan) y aviso de la Zona Cero. */
+#scr-menu.v2 .pp-banner { padding-bottom: 14px; }
+#scr-menu.v2 .pp-facts .pp-warn { font-style: normal; color: #ff9aa8; font-weight: 700; }
+/* Perso (20-10): pantallas bajas (portátiles 1366×768…): el compañero a la derecha, como en el móvil; si no, el texto se cortaba. */
+@media (max-height: 800px) and (min-height: 521px) {
+  #scr-menu.v2 .pp-banner { flex-direction: row; justify-content: space-between; align-items: center; }
+  #scr-menu.v2 .pp-info { order: 0; margin-top: 0; align-self: flex-end; }
+  #scr-menu.v2 .pp-banner .partner-card { margin-top: 0; }
+}
