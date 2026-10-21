@@ -34,7 +34,7 @@
 <meta name="apple-mobile-web-app-title" content="PokéSurvivor">
 <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
 <link rel="preload" href="assets/fonts/Fredoka.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=5aa6a690f6">
+<link rel="stylesheet" href="css/style.css?v=6c1b544050">
 <style>/* perso: cuadro central del menú (tu Pokémon + niveles); aquí porque style.css se queda en caché */
 .play-panel { display: flex; gap: 18px; align-items: stretch; margin: 10px auto 0; padding: 14px 16px; max-width: 640px;
   background: linear-gradient(180deg, rgba(18,26,44,.92), rgba(8,12,24,.95)); border: 2px solid #a8894a; border-radius: 14px;
@@ -308,6 +308,7 @@
         <button class="menu-item" data-go="ach">Logros<small id="menu-ach-sub">Tus medallas</small></button>
         <button class="menu-item" data-go="friends">Amigos<small id="menu-friends-sub">Juega en grupo, hasta 4</small></button>
         <button class="menu-item" data-go="lexicon">Léxico<small>Movimientos Z y objetos</small></button>
+        <button class="menu-item" data-go="caps">Chapas<small id="menu-caps-sub">Mejoras para todos tus Pokémon</small></button>
         <button class="menu-item" data-go="train">Entrenamiento<small>Maniquíes y opciones de prueba</small></button>
       </div>
     </div>
@@ -592,6 +593,15 @@
 </section>
 
 <!-- ====== Mejoras ====== -->
+<!-- ====== Perso (22-10): Capsulas (mejoras de la cuenta) ====== -->
+<section id="scr-caps" class="scr dim hidden">
+  <div class="box wide">
+    <div class="row between"><h2>Chapas</h2><button class="btn small ghost" data-back>Volver</button></div>
+    <div id="caps-head" class="caps-head"></div>
+    <div class="upg" id="caps-list"></div>
+  </div>
+</section>
+
 <section id="scr-upgrades" class="scr dim hidden">
   <div class="box wide">
     <div class="row between"><h2>Mejoras</h2><button class="btn small ghost" data-back>Volver</button></div>
@@ -668,6 +678,15 @@
   </div>
 </section>
 
+<!-- perso (21-10): Piedra Evolutiva (grieta dorada) -->
+<section id="scr-stone" class="scr dim hidden">
+  <div class="box center">
+    <h2 style="display:flex;align-items:center;justify-content:center;gap:8px"><img src="assets/ui/evo-stone.png" width="36" height="36" alt="" style="image-rendering:pixelated">Piedra Evolutiva</h2>
+    <p class="sub">Elige el ataque de nivel 5 que evoluciona (sin necesitar su mejora)</p>
+    <div id="stone-cards" class="cards"></div>
+    <div class="row" style="justify-content:center"><button id="stone-later" class="btn ghost">Más tarde</button></div>
+  </div>
+</section>
 <section id="scr-bond" class="scr dim hidden">
   <div class="box center">
     <h2 class="bond-title">¡Vínculo!</h2>
@@ -690,8 +709,8 @@
 <section id="scr-pause" class="scr dim hidden">
   <div class="box center" style="width:min(460px,100%)">
     <h2>Pausa</h2>
-    <div class="sub kbd-hint pause-keys"><span><kbd>WASD</kbd> <i>moverse</i></span><span><kbd>1</kbd>–<kbd>4</kbd> <i>movimiento</i></span><span><kbd>Q</kbd>/<kbd>E</kbd> <i>ciclar</i></span><span><kbd>Esc</kbd> <i>pausa</i></span></div>
-    <p class="sub touch-hint">Arrastra el dedo para moverte · toca un ataque para cambiarlo</p>
+    <div class="sub kbd-hint pause-keys"><span><kbd>WASD</kbd> <i>moverse</i></span><span><kbd>R</kbd> <i>Movimiento Z</i></span><span><kbd>Espacio</kbd> <i>Megaevolución</i></span><span><kbd>Esc</kbd> <i>pausa</i></span></div>
+    <p class="sub touch-hint">Arrastra el dedo para moverte · tus 4 ataques se lanzan solos</p>
     <p id="pause-coop" class="note hidden">Partida en grupo: el juego sigue mientras estás aquí.</p>
     <div id="pause-sound" class="sound-inline"></div>
     <!-- perso (18-10): botones en rejilla (Continuar ancho; Ajustes · ATH; Abandonar abajo) -->
@@ -715,7 +734,7 @@
 
 <!-- datos generados -->
 <script src="config.js"></script>
-<script defer src="js/app.min.js?v=0f9f9a5710"></script>
+<script defer src="js/app.min.js?v=3bea6075f6"></script>
 <script>(function () { var l = document.getElementById('priv-local'); if (!l) return;
   if (window.PS_FIREBASE && window.PS_FIREBASE.apiKey) { l.remove(); return; }
   for (var n = l.nextElementSibling; n; n = n.nextElementSibling) n.style.display = 'none'; })();</script>
