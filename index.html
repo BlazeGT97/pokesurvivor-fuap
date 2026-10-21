@@ -4,8 +4,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>PokéSurvivor – Juego Pokémon gratis online estilo Survivor.io</title>
-<meta name="description" content="Sobrevive a hordas de Pokémon con tu compañero en este fan game gratis para navegador y móvil: 966 Pokémon, shinies, legendarios y cooperativo con amigos. Sin descargas ni anuncios.">
+<title>PokéSurvivor – Enhanced Version by Intox2B</title>
+<meta name="description" content="PokéSurvivor Enhanced Version by Intox2B: fan game survivor Pokémon gratis para navegador y móvil, con cooperativo, Zona Cero, Arceus y 966 Pokémon.">
+<!-- Perso (21-10): compartir el enlace (Discord, WhatsApp, Reddit…): siempre la Enhanced Version de Intox2B, en las dos versiones.
+     https://intox2b20.github.io/pokesurvivor-plus/ lo pone tools/build.js (privada o pública). -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PokéSurvivor Enhanced Version">
+<meta property="og:url" content="https://intox2b20.github.io/pokesurvivor-plus/">
+<meta property="og:title" content="PokéSurvivor – Enhanced Version by Intox2B">
+<meta property="og:description" content="Survivor Pokémon fan game for browser and mobile, reworked by Intox2B: co-op, Area Zero (endless), Arceus, 966 Pokémon and shinies. Free, no ads.">
+<meta property="og:image" content="https://intox2b20.github.io/pokesurvivor-plus/assets/og-intox.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="PokéSurvivor Enhanced Version by Intox2B">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PokéSurvivor – Enhanced Version by Intox2B">
+<meta name="twitter:description" content="Survivor Pokémon fan game reworked by Intox2B: co-op, Area Zero, Arceus, 966 Pokémon. Free, no ads.">
+<meta name="twitter:image" content="https://intox2b20.github.io/pokesurvivor-plus/assets/og-intox.jpg">
 <link rel="manifest" href="manifest.webmanifest">
 <!-- Google sólo enseña en los resultados iconos de 48 px o múltiplos -->
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -139,6 +154,40 @@
 </style>
 <style>/* fuente (también aquí: el CSS puede estar en caché) */
 @font-face { font-family: 'Pixelify'; src: url('assets/fonts/Fredoka.ttf') format('truetype'); font-weight: 300 900; font-display: block; }</style>
+<style>/* perso (21-10): barra de arriba nueva (bandeau nocturno pixel, botones con esquinas pixel) */
+#topbar { top: 8px; right: 10px; gap: 8px; padding: 7px 10px; border-radius: 4px;
+  background:
+    radial-gradient(1.5px 1.5px at 12% 30%, #c9d3ff 99%, transparent), radial-gradient(1px 1px at 33% 72%, #9aa6ef 99%, transparent),
+    radial-gradient(1.5px 1.5px at 58% 22%, #c9d3ff 99%, transparent), radial-gradient(1px 1px at 81% 64%, #9aa6ef 99%, transparent),
+    radial-gradient(1px 1px at 93% 18%, #c9d3ff 99%, transparent),
+    linear-gradient(180deg, #17183f 0%, #10112e 100%);
+  box-shadow: 0 0 0 2px #2d3070, 0 0 0 4px #0a0b20, 0 6px 14px rgba(0,0,0,.45); }
+#topbar .pill, #topbar > .btn.small {
+  --tb-edge: #545aa6;
+  display: inline-flex; align-items: center; gap: 7px; height: 34px; box-sizing: border-box;
+  padding: 0 12px; border-radius: 0; border: 0; color: #f4f6ff; font-weight: 800; font-size: 14px;
+  background: linear-gradient(180deg, #1f2150 0%, #181a42 100%);
+  text-shadow: 2px 2px 0 #0a0b20;
+  /* borde pixel de 2 px con las esquinas recortadas */
+  box-shadow: inset 0 0 0 2px var(--tb-edge), inset 0 -4px 0 2px rgba(0,0,0,.28);
+  clip-path: polygon(2px 0, calc(100% - 2px) 0, calc(100% - 2px) 2px, 100% 2px, 100% calc(100% - 2px), calc(100% - 2px) calc(100% - 2px),
+    calc(100% - 2px) 100%, 2px 100%, 2px calc(100% - 2px), 0 calc(100% - 2px), 0 2px, 2px 2px);
+  transition: filter .12s, transform .12s; }
+#topbar > .btn.small:hover, #topbar #user-pill:hover { filter: brightness(1.25); --tb-edge: #8b92e8; }
+#topbar > .btn.small:active { transform: translateY(1px); }
+#topbar > #btn-sound, #topbar > #btn-full, #topbar > #btn-settings { width: 38px; padding: 0; justify-content: center; }
+#topbar #user-pill { cursor: pointer; }
+#topbar .pill img.pix, #topbar .btn img.pix { width: 22px; height: auto; }
+#topbar #btn-sound img.pix, #topbar #btn-full img.pix, #topbar #btn-settings img.pix { width: 22px; }
+#topbar .news-btn .dot { top: 4px; right: 4px; }
+@media (max-width: 900px), (max-height: 520px) {
+  #topbar { gap: 5px; padding: 4px 6px; top: 4px; right: 6px; }
+  #topbar .pill, #topbar > .btn.small { height: 28px; padding: 0 8px; font-size: 12px; gap: 5px; }
+  #topbar > #btn-sound, #topbar > #btn-full, #topbar > #btn-settings { width: 30px; }
+  #topbar .pill img.pix, #topbar .btn img.pix { width: 18px; }
+  #topbar #btn-logout span, #topbar .news-btn span, #topbar .contact-btn span { display: none; }
+}
+</style>
 <script>if (location.hostname === 'intox2b20.github.io') { const s = document.createElement('script'); s.defer = true; s.src = 'https://static.cloudflareinsights.com/beacon.min.js'; s.setAttribute('data-cf-beacon', '{"token": "bb790692d1814e0cb6fdeed3e09efedd"}'); document.head.appendChild(s); }</script>
 </head>
 <body>
@@ -274,7 +323,6 @@
   <div class="pill" id="user-pill"></div>
   <button id="btn-news" class="btn small ghost news-btn" title="Novedades"></button>
   <button id="btn-contact" class="btn small ghost contact-btn" title="Contacto"></button>
-  <button id="btn-support" class="btn small gold hidden" title="Apoyar el PokéSurvivor original (JPTER78)"></button>
   <button id="btn-sound" class="btn small ghost" title="Sonido"></button>
   <button id="btn-full" class="btn small ghost hidden" title="Pantalla completa"></button>
   <button id="btn-settings" class="btn small ghost" title="Ajustes"></button>
@@ -334,7 +382,7 @@
     <div class="row between"><h2>Aviso legal</h2><button class="btn small ghost" id="legal-close">Cerrar</button></div>
     <h3>Proyecto de fan</h3>
     <p><b>PokéSurvivor</b> es un juego hecho por fans, <b>gratuito y sin ánimo de lucro</b>.
-      No tiene anuncios ni compras. Se puede apoyar con donaciones voluntarias, que se usan sólo para pagar los servidores y el dominio, y que no dan ninguna ventaja en el juego.</p>
+      No tiene anuncios ni compras.</p>
     <p>No está afiliado, patrocinado ni aprobado por Nintendo, Creatures Inc., GAME FREAK ni
       The Pokémon Company. Pokémon y todos los nombres y personajes relacionados son marcas y
       propiedad de sus respectivos dueños.</p>
@@ -459,6 +507,7 @@
     <div class="row between"><h2>Ranking</h2><span class="row" style="gap:6px"><button id="rk-mod" class="btn small ghost hidden">Moderación</button><button class="btn small ghost" data-back>Volver</button></span></div>
     <div class="gen-tabs" id="rk-cat"></div>
     <div class="gen-tabs" id="rk-mode"></div>
+    <div class="gen-tabs" id="rk-metric"></div>
     <div class="filters" id="rk-period"></div>
     <div class="row rk-tools">
       <div class="filters" id="rk-scope" style="margin:0"></div>
@@ -667,7 +716,7 @@
 
 <!-- datos generados -->
 <script src="config.js"></script>
-<script defer src="js/app.min.js?v=eb8d5fd9dc"></script>
+<script defer src="js/app.min.js?v=71f4d6c411"></script>
 <script>(function () { var l = document.getElementById('priv-local'); if (!l) return;
   if (window.PS_FIREBASE && window.PS_FIREBASE.apiKey) { l.remove(); return; }
   for (var n = l.nextElementSibling; n; n = n.nextElementSibling) n.style.display = 'none'; })();</script>
