@@ -34,7 +34,7 @@
 <meta name="apple-mobile-web-app-title" content="PokéSurvivor">
 <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
 <link rel="preload" href="assets/fonts/Fredoka.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=a5b3e997d8">
+<link rel="stylesheet" href="css/style.css?v=61073a851b">
 <style>/* perso: cuadro central del menú (tu Pokémon + niveles); aquí porque style.css se queda en caché */
 .play-panel { display: flex; gap: 18px; align-items: stretch; margin: 10px auto 0; padding: 14px 16px; max-width: 640px;
   background: linear-gradient(180deg, rgba(18,26,44,.92), rgba(8,12,24,.95)); border: 2px solid #a8894a; border-radius: 14px;
@@ -601,6 +601,9 @@
     <p class="sub" style="margin:2px 0 4px">3 CT al azar, las mismas para todos. Lo que compras va a tu mochila de CT (Mejoras &gt; Aprender una CT).</p>
     <p id="shop-timer" class="gold" style="margin:0 0 12px;font-weight:700"></p>
     <div id="shop-list" class="shop-list"></div>
+    <h3 class="set-h" style="margin-top:16px">Mentas</h3>
+    <p class="sub" style="margin:0 0 8px">Desbloquean una naturaleza (×1,1 a una estadística y ×0,9 a otra). Se guardan: úsalas en la ficha del Pokémon que quieras.</p>
+    <div id="shop-mints" class="shop-list"></div>
   </div>
 </section>
 
@@ -745,7 +748,7 @@
 
 <!-- datos generados -->
 <script src="config.js"></script>
-<script defer src="js/app.min.js?v=d8337be1d7"></script>
+<script defer src="js/app.min.js?v=93bfa2a932"></script>
 <script>(function () { var l = document.getElementById('priv-local'); if (!l) return;
   if (window.PS_FIREBASE && window.PS_FIREBASE.apiKey) { l.remove(); return; }
   for (var n = l.nextElementSibling; n; n = n.nextElementSibling) n.style.display = 'none'; })();</script>

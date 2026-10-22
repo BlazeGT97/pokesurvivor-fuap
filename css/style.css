@@ -1238,3 +1238,6 @@ div.tm-row { cursor: default; }
 /* Perso (22-10): 10 entradas en el menú (Tienda y Capsulas): un poco más juntas */
 #scr-menu.v2 .menu-item { padding-top: 5px; padding-bottom: 5px; }
 #scr-menu.v2 .menu-item small { line-height: 1.15; }
+.nat-new { font-size: 10px; color: #9be59b; white-space: nowrap; }
+.nat-chips { gap: 4px; }
+.nat-chips .chip { font-size: 12px; padding: 2px 8px; }
