@@ -1208,7 +1208,7 @@ div.tm-row { cursor: default; }
 
 /* Perso (20-10): mensaje fijo arriba de las novedades. */
 .news-pin { margin: 4px 0 10px; padding: 12px 14px; border-radius: 10px; border: 2px solid #ffd23f; background: linear-gradient(180deg, rgba(255,210,63,.14), rgba(255,210,63,.05)); }
-.news-pin h3 { margin: 0 0 6px; color: #ffd23f; font-size: 18px; }
+.news-pin h3 { margin: 0 0 8px; color: #ffd23f; font-size: 26px; letter-spacing: .03em; text-align: center; text-shadow: 2px 2px 0 #7a4b00; }   /* perso (22-10): gros titre */
 .news-pin h4 { margin: 10px 0 4px; color: #ffe9a0; font-size: 14px; text-transform: uppercase; letter-spacing: .04em; }
 .news-pin p { margin: 0; line-height: 1.4; font-size: 15px; }
 .news-pin ul { margin: 0; padding-left: 20px; } .news-pin li { margin: 3px 0; font-size: 15px; }
@@ -1226,3 +1226,15 @@ div.tm-row { cursor: default; }
 @keyframes capsFlash { from { box-shadow: 0 0 0 3px var(--gold), 0 0 18px var(--gold); } to { box-shadow: none; } }
 .caps-flash { animation: capsFlash .7s ease-out; }
 .lex-evo { cursor: help; text-decoration: underline dotted; text-underline-offset: 3px; }
+
+/* Perso (22-10): Tienda de CT */
+.shop-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.shop-item { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; border: 2px solid var(--rc); box-shadow: 0 0 10px color-mix(in srgb, var(--rc) 45%, transparent); }
+.shop-rar { align-self: stretch; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--rc); }
+.shop-nm { font-size: 16px; }
+.shop-tags { display: flex; gap: 6px; align-items: center; justify-content: center; flex-wrap: wrap; }
+.shop-ds { font-size: 13px; color: var(--muted); margin: 0; flex: 1; }
+.shop-item .btn { min-width: 120px; }
+/* Perso (22-10): 10 entradas en el menú (Tienda y Capsulas): un poco más juntas */
+#scr-menu.v2 .menu-item { padding-top: 5px; padding-bottom: 5px; }
+#scr-menu.v2 .menu-item small { line-height: 1.15; }
