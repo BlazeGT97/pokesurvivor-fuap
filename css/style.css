@@ -1301,3 +1301,17 @@ div.tm-row { cursor: default; }
 .shop-banner { margin: 6px 0 10px; border-radius: 10px; overflow: hidden; border: 3px solid var(--edge, #3d5fae); box-shadow: inset 0 0 0 2px rgba(255,255,255,.08); background: #1b1f4a; }
 .shop-banner-cv { display: block; width: 100%; height: auto; aspect-ratio: 320 / 84; image-rendering: pixelated; }
 @media (max-height: 520px) { .shop-banner-cv { aspect-ratio: auto; height: 90px; object-fit: cover; } }
+
+/* Perso (23-10): chat directo con un amigo */
+#scr-friends .box { min-height: 420px; }
+.dm-pop { position: absolute; inset: 0; z-index: 5; display: flex; flex-direction: column; gap: 8px; padding: 18px 20px; border-radius: 9px; background: linear-gradient(180deg, var(--box1), var(--box2)); }
+.dm-pop.hidden { display: none; }
+.dm-pop h3 { margin: 0; }
+.dm-log { flex: 1; min-height: 160px; overflow-y: auto; display: flex; flex-direction: column; gap: 6px; padding: 8px; border-radius: 10px; background: rgba(0,0,0,.25); }
+.dm-msg { align-self: flex-start; max-width: 78%; padding: 7px 11px; border-radius: 12px 12px 12px 4px; background: rgba(255,255,255,.09); font-size: 15px; overflow-wrap: anywhere; }
+.dm-msg small { display: block; font-size: 10.5px; color: var(--muted); margin-top: 2px; }
+.dm-msg.mine { align-self: flex-end; border-radius: 12px 12px 4px 12px; background: rgba(79,180,255,.22); }
+.dm-msg.mine small { text-align: right; }
+.dm-msg.pend { opacity: .55; }
+.dm-btn { position: relative; }
+.dm-badge { position: absolute; top: -6px; right: -6px; min-width: 17px; height: 17px; padding: 0 4px; border-radius: 9px; background: #ff5f6d; color: #fff; font: 800 11px/17px Fredoka, sans-serif; font-style: normal; }
