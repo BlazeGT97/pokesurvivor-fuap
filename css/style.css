@@ -1249,3 +1249,55 @@ div.tm-row { cursor: default; }
 .lex-bar select option { background: #14203f; color: #fff; }
 .lex-bar .lex-n { color: var(--muted, #a9bbe6); font-size: 13px; margin-left: auto; align-self: center; }
 @media (max-width: 640px) { .lex-bar label { flex: 1 1 30%; } .lex-bar select { min-width: 0; width: 100%; } .lex-bar .lex-q { min-width: 100%; } }
+/* Perso (22-10): móvil y tableta: sin la barra de arriba dentro de los menús (más sitio).
+ * Se queda en Mejoras, Tienda y Límites (ahí hacen falta las monedas). */
+@media (pointer: coarse) {
+  body:has(.scr.dim:not(.hidden):not(#scr-upgrades):not(#scr-shop):not(#scr-caps)) #topbar,
+  body:has(.scr.dim:not(.hidden):not(#scr-upgrades):not(#scr-shop):not(#scr-caps)) #sound-panel { display: none !important; }
+  .scr.dim:not(#scr-upgrades):not(#scr-shop):not(#scr-caps) { padding-top: 6px !important; }
+}
+/* Perso (22-10): Pokémon en móvil horizontal: ficha más grande. */
+@media (max-height: 520px) {
+  #scr-dex .split { grid-template-columns: 1fr minmax(240px, 44%); }
+  #dex-detail .stage { width: 160px; height: 130px; }
+  #dex-detail .stat { grid-template-columns: 74px 1fr 38px; font-size: 13px; }
+  #dex-detail p { font-size: 13px !important; }
+}
+.nat-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+.nat-btns .btn { flex: 1 1 auto; display: inline-flex; align-items: center; justify-content: center; gap: 4px; }
+.nat-btns .btn:disabled { opacity: .45; }
+/* Perso (22-10): Pokémon: ficha a toda la altura, barra de búsqueda y filtros. */
+#scr-dex .dex-box { width: min(1560px, 100%); height: 100%; display: flex; flex-direction: column; overflow: hidden; }
+.dex-wrap { display: grid; grid-template-columns: 1fr minmax(320px, 30%); gap: 14px; flex: 1; min-height: 0; }
+.dex-left { display: flex; flex-direction: column; min-height: 0; min-width: 0; }
+.dex-left .row.between h2 { margin: 0; }
+.dex-bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: flex-end; margin: 8px 0 10px; }
+.dex-bar .dex-q { flex: 1 1 100%; padding: 8px 10px; }
+.dex-bar label { display: flex; flex-direction: column; gap: 2px; font-size: 11px; color: var(--muted); flex: 1 1 0; min-width: 110px; }
+.dex-bar select { padding: 6px 8px; width: 100%; }
+.dex-bar .dex-n { color: var(--muted); font-size: 13px; align-self: center; }
+#scr-dex #dex-grid { flex: 1; min-height: 0; max-height: none; overflow-y: auto; align-content: start; grid-auto-rows: max-content; }
+#scr-dex #dex-detail { height: 100%; min-height: 0; overflow-y: auto; margin: 0; }
+@media (max-height: 520px) {
+  #scr-dex .dex-box { padding: 8px 10px; }
+  .dex-wrap { grid-template-columns: 1fr minmax(250px, 42%); gap: 8px; }
+  .dex-bar { gap: 5px; margin: 4px 0 6px; flex-wrap: nowrap; }
+  .dex-bar .dex-q { flex: 1 1 140px; min-width: 110px; padding: 5px 8px; }
+  .dex-bar label { min-width: 70px; } .dex-bar label span { display: none; } .dex-bar select { padding: 5px 4px; font-size: 12px; }
+  .dex-bar .dex-n { display: none; }
+  .dex-left .row.between h2 { font-size: 18px; }
+}
+@media (min-height: 521px) and (pointer: coarse) { .dex-wrap { grid-template-columns: 1fr minmax(320px, 38%); } }
+@media (max-width: 760px) and (min-height: 521px) {
+  .dex-wrap { grid-template-columns: 1fr; grid-template-rows: 1fr auto; } #scr-dex #dex-detail { height: auto; max-height: 45vh; }
+}
+/* Perso (22-10): subida de nivel: ventana azul (estadísticas) o amarilla (ataques). */
+#scr-levelup .box.lu-stats { border-color: #4fb4ff; box-shadow: 0 0 0 3px #1d4f8a, inset 0 0 0 2px #9fd8ff, 0 0 28px rgba(79,180,255,.45), 0 18px 50px rgba(0,0,0,.55); }
+#scr-levelup .box.lu-moves { border-color: #ffd23f; box-shadow: 0 0 0 3px #7a5a00, inset 0 0 0 2px #ffe89a, 0 0 28px rgba(255,210,63,.45), 0 18px 50px rgba(0,0,0,.55); }
+/* Perso (23-10): tienda: icono en el título y cartel animado. */
+.shop-title { display: flex; align-items: center; gap: 8px; margin: 0; }
+.shop-title .shop-ico img, .shop-title .shop-ico canvas { width: 44px; height: 44px; image-rendering: pixelated; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.shop-banner { margin: 6px 0 10px; border-radius: 10px; overflow: hidden; border: 3px solid var(--edge, #3d5fae); box-shadow: inset 0 0 0 2px rgba(255,255,255,.08); background: #1b1f4a; }
+.shop-banner-cv { display: block; width: 100%; height: auto; aspect-ratio: 320 / 84; image-rendering: pixelated; }
+@media (max-height: 520px) { .shop-banner-cv { aspect-ratio: auto; height: 90px; object-fit: cover; } }
