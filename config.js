@@ -22,4 +22,21 @@
  *   databaseURL: 'https://your-project-default-rtdb.europe-west1.firebasedatabase.app'
  * };
  */
-window.PS_FIREBASE = null;
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCehPzajtB3dhSy3v0ZiVKs8T6HPr4fD3s",
+  authDomain: "fuap-survivor.firebaseapp.com",
+  projectId: "fuap-survivor",
+  storageBucket: "fuap-survivor.firebasestorage.app",
+  messagingSenderId: "779008947228",
+  appId: "1:779008947228:web:306b951d4c10f2f0161bd9"
+  databaseURL: 'https://fuap-survivor-default-rtdb.firebaseio.com/'
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
