@@ -175,7 +175,7 @@
   transition: filter .12s, transform .12s; }
 #topbar > .btn.small:hover, #topbar #user-pill:hover { filter: brightness(1.25); --tb-edge: #8b92e8; }
 #topbar > .btn.small:active { transform: translateY(1px); }
-#topbar > #btn-sound, #topbar > #btn-full, #topbar > #btn-settings, #topbar > #btn-contact { width: 38px; padding: 0; justify-content: center; }
+#topbar > #btn-sound, #topbar > #btn-full, #topbar > #btn-settings, #topbar > #btn-contact, #topbar > #btn-discord { width: 38px; padding: 0; justify-content: center; display: inline-flex; align-items: center; }
 #topbar #user-pill { cursor: pointer; }
 #topbar .pill img.pix, #topbar .btn img.pix { width: 22px; height: auto; }
 #topbar #btn-sound img.pix, #topbar #btn-full img.pix, #topbar #btn-settings img.pix { width: 22px; }
@@ -183,7 +183,7 @@
 @media (max-width: 900px), (max-height: 520px) {
   #topbar { gap: 5px; padding: 4px 6px; top: 4px; right: 6px; }
   #topbar .pill, #topbar > .btn.small { height: 28px; padding: 0 8px; font-size: 12px; gap: 5px; }
-  #topbar > #btn-sound, #topbar > #btn-full, #topbar > #btn-settings, #topbar > #btn-contact { width: 30px; }
+  #topbar > #btn-sound, #topbar > #btn-full, #topbar > #btn-settings, #topbar > #btn-contact, #topbar > #btn-discord { width: 30px; }
   #topbar .pill img.pix, #topbar .btn img.pix { width: 18px; }
   #topbar #btn-logout span, #topbar .news-btn span, #topbar .contact-btn span { display: none; }
 }
@@ -325,6 +325,7 @@
   <div class="pill" id="tickets-pill" title="Tickets del gacha"></div>
   <button id="btn-news" class="btn small ghost news-btn" title="Novedades"></button>
   <button id="btn-contact" class="btn small ghost contact-btn" title="Contacto"></button>
+  <a id="btn-discord" class="btn small ghost contact-btn" href="https://discord.gg/kSwwHwyQZ" target="_blank" rel="noopener" title="Discord" translate="no"></a>
   <button id="btn-full" class="btn small ghost hidden" title="Pantalla completa"></button>
   <button id="btn-sound" class="btn small ghost" title="Sonido"></button>
   <button id="btn-settings" class="btn small ghost" title="Ajustes"></button>
@@ -757,7 +758,7 @@
 
 <!-- datos generados -->
 <script src="config.js"></script>
-<script defer src="js/app.min.js?v=dfe393661a"></script>
+<script defer src="js/app.min.js?v=965fd4a981"></script>
 <script>(function () { var l = document.getElementById('priv-local'); if (!l) return;
   if (window.PS_FIREBASE && window.PS_FIREBASE.apiKey) { l.remove(); return; }
   for (var n = l.nextElementSibling; n; n = n.nextElementSibling) n.style.display = 'none'; })();</script>
