@@ -34,7 +34,7 @@
 <meta name="apple-mobile-web-app-title" content="PokéSurvivor">
 <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
 <link rel="preload" href="assets/fonts/Fredoka.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=26767182c3">
+<link rel="stylesheet" href="css/style.css?v=9f29f2a746">
 <style>/* perso: cuadro central del menú (tu Pokémon + niveles); aquí porque style.css se queda en caché */
 .play-panel { display: flex; gap: 18px; align-items: stretch; margin: 10px auto 0; padding: 14px 16px; max-width: 640px;
   background: linear-gradient(180deg, rgba(18,26,44,.92), rgba(8,12,24,.95)); border: 2px solid #a8894a; border-radius: 14px;
@@ -175,7 +175,7 @@
   transition: filter .12s, transform .12s; }
 #topbar > .btn.small:hover, #topbar #user-pill:hover { filter: brightness(1.25); --tb-edge: #8b92e8; }
 #topbar > .btn.small:active { transform: translateY(1px); }
-#topbar > #btn-sound, #topbar > #btn-full, #topbar > #btn-settings, #topbar > #btn-contact { width: 38px; padding: 0; justify-content: center; }
+#topbar > #btn-sound, #topbar > #btn-full, #topbar > #btn-settings, #topbar > #btn-contact, #topbar > #btn-discord { width: 38px; padding: 0; justify-content: center; display: inline-flex; align-items: center; }
 #topbar #user-pill { cursor: pointer; }
 #topbar .pill img.pix, #topbar .btn img.pix { width: 22px; height: auto; }
 #topbar #btn-sound img.pix, #topbar #btn-full img.pix, #topbar #btn-settings img.pix { width: 22px; }
@@ -183,7 +183,7 @@
 @media (max-width: 900px), (max-height: 520px) {
   #topbar { gap: 5px; padding: 4px 6px; top: 4px; right: 6px; }
   #topbar .pill, #topbar > .btn.small { height: 28px; padding: 0 8px; font-size: 12px; gap: 5px; }
-  #topbar > #btn-sound, #topbar > #btn-full, #topbar > #btn-settings, #topbar > #btn-contact { width: 30px; }
+  #topbar > #btn-sound, #topbar > #btn-full, #topbar > #btn-settings, #topbar > #btn-contact, #topbar > #btn-discord { width: 30px; }
   #topbar .pill img.pix, #topbar .btn img.pix { width: 18px; }
   #topbar #btn-logout span, #topbar .news-btn span, #topbar .contact-btn span { display: none; }
 }
@@ -325,6 +325,7 @@
   <div class="pill" id="tickets-pill" title="Tickets del gacha"></div>
   <button id="btn-news" class="btn small ghost news-btn" title="Novedades"></button>
   <button id="btn-contact" class="btn small ghost contact-btn" title="Contacto"></button>
+  <a id="btn-discord" class="btn small ghost contact-btn" href="https://discord.gg/9sPEx9hCS5" target="_blank" rel="noopener" title="Discord" translate="no"></a>
   <button id="btn-full" class="btn small ghost hidden" title="Pantalla completa"></button>
   <button id="btn-sound" class="btn small ghost" title="Sonido"></button>
   <button id="btn-settings" class="btn small ghost" title="Ajustes"></button>
@@ -369,6 +370,7 @@
     <div class="tabs" id="set-tabs">
       <button class="gen-tab" data-t="sound">Sonido</button>
       <button class="gen-tab" data-t="gfx">Gráficos</button>
+      <button class="gen-tab" data-t="battle">Combate</button>
       <button class="gen-tab" data-t="ctl">Controles</button>
       <button class="gen-tab" data-t="acc">Cuenta</button>
       <button class="gen-tab" data-t="about">Acerca de</button>
@@ -757,7 +759,7 @@
 
 <!-- datos generados -->
 <script src="config.js"></script>
-<script defer src="js/app.min.js?v=5f9ccc5f9e"></script>
+<script defer src="js/app.min.js?v=c4ec77c34d"></script>
 <script>(function () { var l = document.getElementById('priv-local'); if (!l) return;
   if (window.PS_FIREBASE && window.PS_FIREBASE.apiKey) { l.remove(); return; }
   for (var n = l.nextElementSibling; n; n = n.nextElementSibling) n.style.display = 'none'; })();</script>
